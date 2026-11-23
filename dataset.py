@@ -22,18 +22,18 @@ generator = torch.Generator().manual_seed(42)#generator to generate the same dat
 #splitting data into sebset train_subset - 50000 and validation_subset - 10000
 train_subset, validation_subset = random_split(train_dataset,[50000,10000],generator=generator)
 
-#creating the dataloaders for training and validation and tesr data
+#creating the dataloaders for training and validation and test data
 train_loader = DataLoader(train_subset, batch_size=64, shuffle=True) #shuffles the data to prevent the model from learning based on a fixed ordering of training examples
 validation_loader = DataLoader(validation_subset, batch_size=64,shuffle=False) #we put shuffle for val and test for false no need of shuffling
 test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 
 #grabbing a single batch to inspect the data
-images,labels = next(iter(train_loader))
-print("Image shape:",images.shape)
-print("Label shape:",labels.shape)
-print("Image data type:",images.dtype)
-print("Images max:",images.max())
-print("Image min:",images.min())
+#images,labels = next(iter(train_loader))
+#print("Image shape:",images.shape)
+#print("Label shape:",labels.shape)
+#print("Image data type:",images.dtype)
+#print("Images max:",images.max())
+#print("Image min:",images.min())
 
 
 
